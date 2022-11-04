@@ -1,0 +1,27 @@
+{
+  "name": "odin-jest-pratices",
+  "version": "1.0.0",
+  "description": "odin-jest-pratices (TDD)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch /src/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trantuvan/odin-jest-pratices.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trantuvan/odin-jest-pratices/issues"
+  },
+  "homepage": "https://github.com/Trantuvan/odin-jest-pratices#readme",
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "babel-jest": "^29.2.2",
+    "jest": "^29.2.2"
+  }
+}
