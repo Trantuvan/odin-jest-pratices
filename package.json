@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "odin-jest-pratices (TDD)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch /src/*.spec.js"
