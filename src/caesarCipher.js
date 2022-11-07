@@ -27,11 +27,9 @@ export default function caesar(mod) {
     y: 24,
     z: 25,
   };
-  let isShifted = false;
 
   function shifted() {
     const shifted = {};
-    isShifted = true;
 
     for (const key in alphabets) {
       shifted[key] = alphabets[key] + mod;
