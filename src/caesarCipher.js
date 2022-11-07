@@ -52,25 +52,31 @@ export default function caesar(mod) {
     return unShifted;
   }
 
+  function mapAlphaToNum(char, mapObj) {
+    for (const alpha in mapObj) {
+      if (alpha === char) {
+        return mapObj[alpha];
+      }
+    }
+  }
+
+  function mapNumToAlpha(num, mapObj) {
+    for (const alpha in mapObj) {
+      if (alphabets[alpha] === num) {
+        return alpha;
+      }
+    }
+  }
+
   function encipher(str) {
     const shiftedAl = shifted();
-    let currentNum = 0;
-    let currentAlpha = "";
+    const strArr = str.split("");
 
-    for (const alpha in shiftedAl) {
-      if (alpha === str) {
-        currentNum = shiftedAl[alpha];
-        break;
-      }
-    }
+    const mapNumArr = strArr.map((char) => mapAlphaToNum(char, shiftedAl));
+    const mapAlphaArr = mapNumArr.map((num) => mapNumToAlpha(num, alphabets));
+    const result = mapAlphaArr.join("");
 
-    for (const alpha in alphabets) {
-      if (alphabets[alpha] === currentNum) {
-        currentAlpha = alpha;
-        break;
-      }
-    }
-    return currentAlpha;
+    return result;
   }
 
   function decipher(str) {}
