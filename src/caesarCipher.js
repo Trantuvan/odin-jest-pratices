@@ -39,19 +39,6 @@ export default function caesar(mod) {
     return shifted;
   }
 
-  function unShifted() {
-    const unShifted = {};
-
-    if (isShifted === true) {
-      const shiftedAl = shifted();
-
-      for (const key in shiftedAl) {
-        unShifted[key] = shiftedAl[key] - mod;
-      }
-    }
-    return unShifted;
-  }
-
   function mapAlphaToNum(char, mapObj) {
     for (const alpha in mapObj) {
       if (alpha === char) {
@@ -84,6 +71,5 @@ export default function caesar(mod) {
 
   return Object.freeze({
     encipher,
-    decipher,
   });
 }
