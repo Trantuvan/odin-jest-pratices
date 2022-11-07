@@ -9,6 +9,13 @@ describe("caesar with key = 1", () => {
       expect(encrypt).toMatch("b");
     });
 
+    it("should encrypt z -> a", () => {
+      const cipherKey1 = caesar(1);
+      const encrypt = cipherKey1.encipher("z");
+
+      expect(encrypt).toMatch("a");
+    });
+
     it("should encrypt a word ab -> bc", () => {
       const cipherKey1 = caesar(1);
       const encrypt = cipherKey1.encipher("ab");

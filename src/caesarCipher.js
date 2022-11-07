@@ -34,6 +34,13 @@ export default function caesar(mod) {
     for (const key in alphabets) {
       shifted[key] = alphabets[key] + mod;
     }
+
+    const reverseShiftKeys = Object.keys(shifted).reverse();
+
+    for (let i = 0; i < mod; i++) {
+      shifted[reverseShiftKeys[i]] = i;
+    }
+
     return shifted;
   }
 
@@ -64,8 +71,6 @@ export default function caesar(mod) {
 
     return result;
   }
-
-  function decipher(str) {}
 
   return Object.freeze({
     encipher,
