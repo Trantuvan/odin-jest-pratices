@@ -74,7 +74,8 @@ export default function caesar(mod) {
 
     const mapNumArr = strArr.map((char) => mapAlphaToNum(char, shiftedAl));
     const mapAlphaArr = mapNumArr.map((num) => mapNumToAlpha(num, alphabets));
-    const result = mapAlphaArr.join("");
+    const mapAlphaWithWhiteSpace = mapAlphaArr.map((val) => val ?? " ");
+    const result = mapAlphaWithWhiteSpace.join("");
 
     return result;
   }

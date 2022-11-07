@@ -15,5 +15,12 @@ describe("caesar with key = 1", () => {
 
       expect(encrypt).toMatch("bc");
     });
+
+    it("should encrypt punctuation whitespace ab c -> bc d", () => {
+      const cipherKey1 = caesar(1);
+      const encrypt = cipherKey1.encipher("ab c");
+
+      expect(encrypt).toMatch("bc d");
+    });
   });
 });
