@@ -54,7 +54,7 @@ export default function caesar(mod) {
 
   function mapNumToAlpha(num, mapObj) {
     for (const alpha in mapObj) {
-      if (alphabets[alpha] === num) {
+      if (mapObj[alpha] === num) {
         return alpha;
       }
     }
@@ -72,7 +72,19 @@ export default function caesar(mod) {
     return result;
   }
 
+  function decipher(str) {
+    const shiftedAl = shifted();
+    const strArr = str.split("");
+
+    const mapNumArr = strArr.map((char) => mapAlphaToNum(char, alphabets));
+    const mapAlphaArr = mapNumArr.map((num) => mapNumToAlpha(num, shiftedAl));
+    const mapAlphaWithWhiteSpace = mapAlphaArr.map((val) => val ?? " ");
+    const result = mapAlphaWithWhiteSpace.join("");
+
+    return result;
+  }
   return Object.freeze({
     encipher,
+    decipher,
   });
 }
